@@ -1,0 +1,4 @@
+#
+# Run the trackpadctl program at bootup.
+#
+@reboot root /usr/bin/trackpadctl >/dev/null 2>&1
