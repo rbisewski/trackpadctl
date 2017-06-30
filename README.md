@@ -3,7 +3,7 @@
 This is a rather plain golang-based method of using xinput to control certain
 trackpads settings on Linux.
 
-Part of my reason for writting this was a need for a more minimalist way of
+Part of my reason for writing this was a need for a more minimalist way of
 painlessly stopping laptop trackpads on bootup.
 
 When it comes to trackpads on Linux, I expect there is a great deal of
