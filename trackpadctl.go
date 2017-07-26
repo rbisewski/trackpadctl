@@ -88,7 +88,8 @@ func main() {
 
     // safety check, ensure that no error occurred
     if err != nil {
-        fmt.Println(err)
+        fmt.Println("The following device may not exist:",
+          trackpad_device_name)
         fmt.Println("Error: running xinput --id-only failed. Exiting...")
         os.Exit(1)
     }
@@ -122,8 +123,8 @@ func main() {
 
     // safety check, ensure that no error occurred
     if err != nil {
-        fmt.Println(err)
-        fmt.Println("Error: disabling device failed. Exiting...")
+        fmt.Println("Error: disabling '", trackpad_device_name,
+          "' device failed. Exiting...")
         os.Exit(1)
     }
 
@@ -138,7 +139,8 @@ func main() {
 
     // if the error string is present, go ahead and quit
     if len(verify) > 0 {
-        fmt.Println("Error: xinput could not find device. Exiting...")
+        fmt.Println("Error: xinput could not find the '",
+          trackpad_device_name, "' device. Exiting...")
         os.Exit(1)
     }
 
