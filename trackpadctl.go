@@ -128,11 +128,17 @@ func main() {
         os.Exit(1)
     }
 
-    // assemble a regex of the possible error message 
-    re := regexp.MustCompile("unable to find device")
-
     // dump the bytes to a string
     tmp_str = string(output)
+
+    // if the length of the converted output is 0, then everything probably
+    // worked as intended, so exit(0) here
+    if len(tmp_str) < 1 {
+        os.Exit(0)
+    }
+
+    // assemble a regex of the possible error message
+    re := regexp.MustCompile("unable to find device")
 
     // further check, ensure that xinput could actually find the device
     verify := re.FindString(tmp_str)
